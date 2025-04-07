@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #007acc;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+    margin: 0 10px;
+
+    &:hover,
+    &:focus {
+      background-color: #005f99;
+      color: #e0e0e0;
+      outline: none;
+    }
+
+    &:active {
+      background-color: #004080;
+    }
+  }
+}

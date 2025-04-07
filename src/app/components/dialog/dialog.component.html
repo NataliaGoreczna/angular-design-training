@@ -1,0 +1,39 @@
+<div class="dialog">
+  <div class="top">
+    <div class="text-container">
+      <p>{{ header }}</p>
+      <div class="description">{{ description }}</div>
+    </div>
+    <button class="close-button"
+            (click)="close()">
+      <img [ngSrc]="'../../../assets/carbon_close-outline.svg'"
+           width="24"
+           height="24"
+           alt="Close" />
+    </button>
+  </div>
+
+  <div class="dialog-content">
+    <div class="frame">
+      <div class="cards">
+        <div class="card"
+             *ngFor="let card of cards"
+             (click)="onCardClick(card)">
+          <img [ngSrc]="card.src"
+               [alt]="card.text"
+               width="99"
+               height="80" />
+          <span>{{ card.text }}</span>
+        </div>
+      </div>
+    </div>
+    <button class="explore-button"
+            (click)="onPrimaryClick()">{{ primaryButtonText }}
+    </button>
+    @if (secondaryButtonText) {
+      <button class="explore-button-secondary"
+              (click)="onSecondaryClick()">{{ secondaryButtonText }}
+      </button>
+    }
+  </div>
+</div>

@@ -1,0 +1,11 @@
+@import '../../theming/breakpoints';
+@import '../../theming/variables';
+
+:host {
+  /* Add any necessary styles here */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,33 @@
+@use '../../theming/variables' as *;
+@use '../../theming/breakpoints' as *;
+
+:host {
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      min-width: 180px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      @media (min-width: map-get($breakpoints, xs)) {
+        max-width: var(--content-width-tablet);
+      }
+
+      @media (min-width: map-get($breakpoints, lg)) {
+        max-width: var(--content-width-desktop);
+      }
+    }
+  }
+}

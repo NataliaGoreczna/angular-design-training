@@ -1,0 +1,38 @@
+<div class="form-container">
+  <h1>Sign in</h1>
+  @if (errorMessage) {
+    <div class="error-message">
+      {{ errorMessage }}
+      <button class="close-button"
+              (click)="clearError()">X
+      </button>
+    </div>
+  }
+  <form (ngSubmit)="onSubmit(form)"
+        #form="ngForm">
+    <app-input-field label="Username or e-mail address"
+                     [(ngModel)]="email"
+                     name="email"
+                     required
+                     email></app-input-field>
+    @if (emailError) {
+      <div class="error-text">Please enter a valid email address.</div>
+    }
+    <a href="#"
+       class="forgot-password">Forgot password?</a>
+    <app-input-field label="Password"
+                     type="password"
+                     [(ngModel)]="password"
+                     name="password"
+                     required></app-input-field>
+    @if (passwordError) {
+      <div class="error-text">Please enter password.</div>
+    }
+    <button type="submit"
+            class="sign-in-button">Sign in
+    </button>
+  </form>
+  @if (successMessage) {
+    <div class="success-message">{{ successMessage }}</div>
+  }
+</div>
