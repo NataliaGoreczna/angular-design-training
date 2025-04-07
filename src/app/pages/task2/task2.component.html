@@ -1,0 +1,10 @@
+<app-dialog
+  [header]="DIALOG_CONFIG.header"
+  [description]="DIALOG_CONFIG.description"
+  [primaryButtonText]="DIALOG_CONFIG.primaryButtonText"
+  [cards]="DIALOG_CONFIG.cards"
+  (primaryClick)="onPrimaryClick()"
+  (secondaryClick)="onSecondaryClick()"
+  (closeClick)="onCloseClick()"
+  (cardClick)="onCardClick($event)"
+></app-dialog>
