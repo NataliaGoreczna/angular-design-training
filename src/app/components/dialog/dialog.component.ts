@@ -8,9 +8,9 @@ import { NgForOf, NgOptimizedImage } from '@angular/common';
   imports: [NgOptimizedImage, NgForOf],
 })
 export class DialogComponent {
-  @Input() header: string = '';
-  @Input() description: string = '';
-  @Input() primaryButtonText: string = 'OK';
+  @Input() header = '';
+  @Input() description = '';
+  @Input() primaryButtonText = 'OK';
   @Input() secondaryButtonText?: string;
   @Input() cards: { src: string; text: string }[] = [];
   @Output() primaryClick = new EventEmitter<void>();
@@ -32,5 +32,15 @@ export class DialogComponent {
 
   onCardClick(card: { src: string; text: string }) {
     this.cardClick.emit(card);
+  }
+
+  handleKeydown(
+    event: KeyboardEvent,
+    card: { src: string; text: string },
+  ): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.onCardClick(card);
+    }
   }
 }

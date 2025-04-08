@@ -18,6 +18,6 @@ import { DialogComponent } from '../../components/dialog/dialog.component';
   styleUrls: ['./demo.component.scss'],
 })
 export class DemoComponent {
-  header: string = 'Mock Header';
-  description: string = 'This is some mock content for the dialog.';
+  header = 'Mock Header';
+  description = 'This is some mock content for the dialog.';
 }

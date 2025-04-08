@@ -14,28 +14,33 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class InputFieldComponent implements ControlValueAccessor {
-  @Input() label: string = '';
-  @Input() placeholder: string = 'Please fill out this field';
-  @Input() type: string = 'text';
+  @Input() label = '';
+  @Input() placeholder = 'Please fill out this field';
+  @Input() type = 'text';
 
-  value: string = '';
-  onChange: any = () => {};
-  onTouched: any = () => {};
+  private _id: string | null = null;
 
-  writeValue(value: any): void {
+  get controlId(): string {
+    if (!this._id) {
+      this._id = `control-${Math.random().toString(36).substring(2, 10)}`;
+    }
+    return this._id;
+  }
+
+  value = '';
+  onChange: (value: string) => void = () => undefined;
+  onTouched: () => void = () => undefined;
+
+  writeValue(value: string): void {
     this.value = value;
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: string) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
-  }
-
-  setDisabledState?(isDisabled: boolean): void {
-    // Handle the disabled state if needed
   }
 
   onInput(event: Event): void {

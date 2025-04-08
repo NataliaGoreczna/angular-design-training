@@ -1,9 +1,11 @@
 <div class="input-field">
   @if (label) {
-    <label>{{ label }}</label>
+    <label [for]="controlId">{{ label }}</label>
   }
-  <input [type]="type"
-         [placeholder]="placeholder"
-         [value]="value"
-         (input)="onInput($event)" />
+  <input
+    [id]="controlId"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onInput($event)" />
 </div>
