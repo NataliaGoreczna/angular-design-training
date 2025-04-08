@@ -9,10 +9,10 @@ import { InputFieldComponent } from '../input-field/input-field.component';
   imports: [FormsModule, InputFieldComponent],
 })
 export class FormComponent {
-  email: string = '';
-  password: string = '';
-  emailError: boolean = false;
-  passwordError: boolean = false;
+  email = '';
+  password = '';
+  emailError = false;
+  passwordError = false;
   errorMessage: string | null = null;
   successMessage: string | null = null;
 

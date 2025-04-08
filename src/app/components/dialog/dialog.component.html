@@ -18,7 +18,9 @@
       <div class="cards">
         <div class="card"
              *ngFor="let card of cards"
-             (click)="onCardClick(card)">
+             tabindex="0"
+             (click)="onCardClick(card)"
+             (keydown)="handleKeydown($event, card)">
           <img [ngSrc]="card.src"
                [alt]="card.text"
                width="99"
