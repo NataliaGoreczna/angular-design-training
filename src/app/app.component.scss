@@ -1,3 +1,5 @@
+@use './theming/breakpoints' as *;
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -24,6 +26,38 @@ nav {
 
     &:active {
       background-color: #004080;
+    }
+  }
+
+  .nav-links {
+    display: none; // Hidden by default for smaller screens
+    flex-direction: column;
+    align-items: center;
+
+    &.active {
+      display: flex; // Show when active
+    }
+
+    @media (min-width: map-get($breakpoints, xs)) {
+      display: flex; // Always show for larger screens
+      flex-direction: row;
+      gap: 15px;
+    }
+  }
+
+  // Responsive styles for smaller screens
+  @media (max-width: map-get($breakpoints, md)) {
+    flex-direction: column;
+
+    a {
+      margin: 5px 0;
+    }
+  }
+
+  @media (max-width: map-get($breakpoints, xs)) {
+    a {
+      font-size: 14px;
+      padding: 8px 10px;
     }
   }
 }
