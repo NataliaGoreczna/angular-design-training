@@ -1,4 +1,4 @@
-# AngularDesignTraining
+# AngularDesignTraining - https://angular-design-training.netlify.app/
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
 This is a simple application designed for training purposes. The application contains a landing page with navigation, where you will find three tasks and a demo page showcasing selected components. The content of the tasks will be presented and discussed during the training. Additionally, Storybook is integrated into the application to show you how you can easily document and test the implemented components.
